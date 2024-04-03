@@ -29,9 +29,42 @@
 .search-cont{
     display: flex;
     flex-direction: column;
+    margin: 1.5rem 0rem;
+}
 
+.search-cont input{
+    width: 80%;
+    height: 44px;
+    border-radius: 0.4rem;
+    border-width: 0.1rem;
+    background-color: #f3f7fe;
+    padding: 0rem 0.5rem;
+    border: 1px solid rgb(160, 159, 159);
+    margin-bottom: 1.5rem;
+}
+
+.search-cont button{
+    height: 44px;
+    border-radius: 0.4rem;
+    border-width: 0rem;
+    background-color: #3366ff;
+    padding: 0rem 0.5rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: #fff;
+    width: 100px;
 }
 
 .home .part2{
     flex-basis: 47%;
 }
+
+@media  screen and (max-width:768px){
+    .home{
+        display: flex;
+    }
+    .part2{
+        display: none;
+    }
+}
+
