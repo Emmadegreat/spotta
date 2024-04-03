@@ -16,20 +16,37 @@
 .part1 h1 {
     font-weight: 700;
     color: #1e1e1e;
-    font-size: 3.5rem;
+    font-size: 3rem;
     margin-bottom: 0.7rem;
 }
 .part1 p{
     font-size: 1.1rem;
     line-height: 1.4;
     color: #1e1e1e;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .search-cont{
     display: flex;
     flex-direction: column;
-    margin: 1.5rem 0rem;
+    margin: 1.2rem 0rem;
+}
+
+.search-wrapper{
+    position: relative;
+}
+
+.search{
+    position: absolute;
+    top: 0;
+    bottom: 2.7rem;
+    left: 1rem;
+    padding-right: 1.6rem;
+    transform: rotate(310deg);
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    color: #0d2159;
 }
 
 .search-cont input{
@@ -38,9 +55,15 @@
     border-radius: 0.4rem;
     border-width: 0.1rem;
     background-color: #f3f7fe;
-    padding: 0rem 0.5rem;
+    padding: 0rem 0.5rem 0rem 2.6rem;
     border: 1px solid rgb(160, 159, 159);
     margin-bottom: 1.5rem;
+
+}
+.search-cont input:focus{
+    border-color: rgb(160, 159, 159);
+    border-style: solid;
+    border-width: 1px;
 }
 
 .search-cont button{
@@ -59,12 +82,39 @@
     flex-basis: 47%;
 }
 
-@media  screen and (max-width:768px){
+@media (min-width: 768px) and (max-width: 971px) {
+  .part1 h1{
+    font-size: 2.3rem;
+  }
+}
+
+@media screen and (max-width:767px){
     .home{
         display: flex;
+        flex-direction: column;
+    }
+
+    .home .part1{
+        flex-basis: 100%;
+    }
+    .part1 h1{
+        font-size: 2.2rem;
     }
     .part2{
         display: none;
+    }
+
+    .search-cont input{
+        width: 340px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .search-cont input{
+        width: 100%;
+    }
+    .part1 h1{
+        font-size: 2rem;
     }
 }
 

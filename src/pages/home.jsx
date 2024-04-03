@@ -12,7 +12,13 @@ const Home = () => {
                     the neighbourhood you might have in mind.
                 </p>
                 <div className='search-cont'>
-                    <input type="search" placeholder='Enter Address' />
+                    <div className='search-wrapper'>
+                        <span className='search'>
+                            &#9906;
+                        </span>
+                        <input type="search" placeholder='Enter Address' name="search" />
+                    </div>
+
                     <button type='submit'>Search</button>
                 </div>
 
