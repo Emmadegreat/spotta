@@ -1,0 +1,37 @@
+.home{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid blue;
+    align-items: center;
+}
+
+.home .part1{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: start;
+    flex-basis: 47%;
+}
+
+.part1 h1 {
+    font-weight: 700;
+    color: #1e1e1e;
+    font-size: 3.5rem;
+    margin-bottom: 0.7rem;
+}
+.part1 p{
+    font-size: 1.1rem;
+    line-height: 1.4;
+    color: #1e1e1e;
+    font-weight: 500;
+}
+
+.search-cont{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.home .part2{
+    flex-basis: 47%;
+}

@@ -1,0 +1,35 @@
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    border: 1px solid red;
+    margin-bottom: 3rem;
+}
+
+.logo button{
+    color: #fff;
+    background-color: #5378f6;
+    border-width: 0rem;
+    border-radius: 0.15rem;
+    padding: 0.2rem 0.3rem;
+}
+
+.logo b{
+    color: #1e1e1e;
+}
+
+.navigation a{
+    text-decoration: none;
+    color: #5882f2;
+    font-size: 1rem;
+    font-weight: 600;
+
+}
+
+@media and, (max-width: 768px){
+    .navigation{
+        display:flex;
+
+    }
+}
