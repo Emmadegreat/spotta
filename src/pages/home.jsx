@@ -29,8 +29,12 @@ const Home = () => {
 
             </div>
             <div className='part2 bg-[#eef0f1]'>
-                <Usercard />
-                <Usercard />
+
+                    <Usercard />
+
+
+
+
                 {/*<p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt eos doloremque, harum illo dignissimos possimus. Sint ex, vitae sapiente voluptatibus iste voluptatem dicta suscipit illo, quasi quae sed amet temporibus.
                 </p>

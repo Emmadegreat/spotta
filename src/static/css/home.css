@@ -14,7 +14,7 @@
 }
 
 .part1 h1 {
-    font-weight: 700;
+    font-weight: 900;
     color: #1e1e1e;
     font-size: 2.8rem;
     margin-bottom: 0.7rem;
@@ -25,7 +25,7 @@
     line-height: 1.4;
     color: #1e1e1e;
     font-weight: 400;
-    margin-right: 1.5rem;
+    margin-right: 2rem;
 }
 
 .search-cont{
@@ -84,7 +84,7 @@
     flex-basis: 55%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 30px;
+    grid-gap: 20px;
     padding: 5px;
 }
 
@@ -96,31 +96,32 @@
 
 
 
-
-@media screen, (min-width: 768px) and (max-width: 971px) {
+@media screen and (max-width: 971px) {
     .home{
         display: flex;
         flex-direction: column;
+    }
+
+    .part1{
+        text-align: start;
+        margin-right: 5rem;
+        font-weight: 700;
     }
     .part1 h1{
         font-size: 2.3rem;
     }
+
 }
 
+
 @media screen and (max-width:767px){
-    .home{
-        display: flex;
-        flex-direction: column;
-    }
 
     .home .part1{
         flex-basis: 100%;
+        margin-right: 4rem;
     }
     .part1 h1{
         font-size: 2.2rem;
-    }
-    .part2{
-        display: none;
     }
 
     .search-cont input{
@@ -141,14 +142,29 @@
     .part1 h1{
         font-size: 2rem;
     }
+    .part1 p{
+        margin-right: 0rem;
+    }
 }
 
 @media screen and (max-width:500px) {
     .search-cont input{
         width: 100%;
     }
+    .home .part1{
+        margin-right: 0rem;
+    }
     .part1 h1{
         font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .home .part2 {
+        display: none;
+    }
+    .home .part1{
+        margin: 4rem 0rem;
     }
 }
 
