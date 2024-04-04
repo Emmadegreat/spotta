@@ -1,40 +1,13 @@
-import '../static/css/home.css';
-
 import React from 'react'
-import Usercard from '../components/usercard';
 import comment from '../static/images/comment.png'
 import dislike from '../static/images/dislike.png'
 import like from '../static/images/like.png'
 import user from '../static/images/user.png'
 
-const Home = () => {
+const Usercard = () => {
     return (
-        <div className='home'>
-            <div className='part1'>
-                <h1>Find a place you <br/>will love to live!</h1>
-                <p>
-                    See through the lenses of people who have lived or visited
-                    the neighbourhood you might have in mind.
-                </p>
-                <div className='search-cont'>
-                    <div className='search-wrapper'>
-                        <span className='search'>
-                            &#9906;
-                        </span>
-                        <input type="search" placeholder='Enter Address' name="search" />
-                    </div>
-
-                    <button type='submit'>Search</button>
-                </div>
-
-            </div>
-            <div className='part2 bg-[#eef0f1]'>
-                <Usercard />
-                <Usercard />
-                {/*<p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt eos doloremque, harum illo dignissimos possimus. Sint ex, vitae sapiente voluptatibus iste voluptatem dicta suscipit illo, quasi quae sed amet temporibus.
-                </p>
-                <div className='card flex flex-col bg-[#f8fafb] p-4 rounded-xl'>
+        <div>
+            <div className='card flex flex-col bg-[#f8fafb] p-4 rounded-xl'>
                     <div className='card-header flex justify-between'>
                         <div className='card-right flex'>
                             <img src={user} alt="user"  className='w-[40px] h-[40px] rounded-full'/>
@@ -86,12 +59,10 @@ const Home = () => {
                         </div>
                     </div>
 
-                </div>*/}
-
-            </div>
+                </div>
 
         </div>
     )
 }
 
-export default Home
+export default Usercard
