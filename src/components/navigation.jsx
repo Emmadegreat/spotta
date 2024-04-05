@@ -6,9 +6,9 @@ const Navigation = () => {
     return (
         <div className='navigation'>
             <div className='logo'>
-                <b>S P O T T A</b>  <button>NG</button>
+                <a href="/"><b>S P O T T A</b>  <button>NG</button></a>
             </div>
-            <a href="#">LOGIN</a>
+            <a href="/login">LOGIN</a>
 
         </div>
     )

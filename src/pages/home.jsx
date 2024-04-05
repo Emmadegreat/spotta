@@ -1,5 +1,6 @@
 import '../static/css/home.css';
 
+import Navigation from '../components/navigation';
 import React from 'react'
 import Usercard from '../components/usercard';
 import comment from '../static/images/comment.png'
@@ -9,7 +10,10 @@ import user from '../static/images/user.png'
 
 const Home = () => {
     return (
-        <div className='home'>
+        <>
+            <Navigation />
+
+          <div className='home'>
             <div className='part1'>
                 <h1>Find a place you <br/>will love to live!</h1>
                 <p>
@@ -94,7 +98,8 @@ const Home = () => {
 
             </div>
 
-        </div>
+            </div>
+        </>
     )
 }
 
