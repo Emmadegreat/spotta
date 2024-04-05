@@ -1,7 +1,8 @@
+import Eyeicon from '../components/eyeicon';
 import Navigation from '../components/navigation';
+import PasswordInput from '../components/passwordInput';
 import React from 'react'
 import apple from '../static/images/apple.png'
-import eye from '../static/images/eye.png'
 import facebook from '../static/images/facebook.png'
 import google from '../static/images/google.png'
 
@@ -24,18 +25,8 @@ const Login = () => {
                             placeholder='E-mail'
                             className='w-full h-[42px] bg-[#f3f7fe] text-[1rem] px-3 py-1 mb-5 rounded-lg border-[1px] border-[#9aabdf] focus:border-solid focus:border-[1px] focus:border-blue-500'
                         />
-                        <div className='relative w-full'>
-                            <img src={eye} alt="lock password"
-                                className='absolute inset-y-0 right-2 top-4 pl-3 rotate-[180deg] w-[] flex items-center text-[1.6rem] text-[#9ca1bc]'
-
-                            />
-                            <input
-                                className='w-[100%] h-[42px] bg-[#f3f7fe] text-[1rem]
-                                px-3 py-1 mb-8 rounded-lg border-[1px] border-[#9aabdf] focus:border-solid focus:border-[1px] focus:border-blue-500'
-                                type="password"
-                                placeholder='Password'
-                                name="password"
-                            />
+                        <div className='w-full'>
+                            <PasswordInput />
                         </div>
 
                         <button type='submit'

@@ -3,10 +3,12 @@ import { Route, BrowserRouter as Router, Routes, createBrowserRouter } from "rea
 import Home from "./pages/home";
 import Login from "./pages/login";
 import React from "react";
+import Review1 from "./pages/review1";
 
 const router = createBrowserRouter([
     { path: '/', element: <Home /> },
     { path: '/login', element: <Login /> },
+    {path: '/review1', element:<Review1 />},
 ])
 
 export default router
