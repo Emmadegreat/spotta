@@ -11,7 +11,7 @@ const ButtonGroup = ({buttons}) => {
         return buttons.slice(startindex, startindex + maxButton).map((button, index) => (
             <button
                 key={index}
-                className='w-[100%] text-[0.6rem] p-1 text-[#383737] mr-1 rounded border-[1px] border-[#d8d7d7]'
+                className='w-[100%] text-[0.6rem] p-1 text-[#000] bg-white mr-1 rounded border-[1px] border-[#d8d7d7]'
             >
                 {button}
             </button>

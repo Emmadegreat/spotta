@@ -1,4 +1,7 @@
+import { faThumbsDown, faThumbsUp } from '@fortawesome/free-solid-svg-icons'
+
 import Api from './api'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import comment from '../static/images/comment.png'
 import dislike from '../static/images/dislike.png'
@@ -50,11 +53,11 @@ const Usercard = () => {
                     <div className="card-footer flex justify-between">
                         <div className="flex justify-around">
                             <span className='flex p-1 items-center text-[#8f95b2] text-[0.8rem]'>
-                                <img src={like} alt="like" className='w-[15px] h-[15px] mr-1 cursor-pointer' />
+                                <FontAwesomeIcon icon={faThumbsUp} className='w-[17px] h-[17px] mr-1 cursor-pointer'/>
                                 {item.like}
                             </span>
                             <span className='flex p-1 items-center text-[#8f95b2] text-[0.8rem]'>
-                                <img src={dislike} alt="dislike" className='w-[15px] h-[15px] mr-1 cursor-pointer' />
+                                <FontAwesomeIcon icon={faThumbsDown} className='w-[17px] h-[17px] mr-1 cursor-pointer'/>
                                 {item.dislikes}
                             </span>
                             <span className='flex p-1 items-center text-[#8f95b2] text-[0.8rem]'>
