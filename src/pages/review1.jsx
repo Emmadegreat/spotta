@@ -69,7 +69,7 @@ const Review1 = () => {
                                 dislikes={item.dislikes}
                                 text={item.text}
                                 comment={item.comment}
-
+                                location={item.location}
                             />
 
                         ))}
