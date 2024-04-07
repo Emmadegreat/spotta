@@ -13,6 +13,7 @@ const ReviewApi=
             'like': '1224',
             'dislikes': 4,
             'comment': 24,
+            "image":'https://res.cloudinary.com/dbnxbly1r/image/upload/v1712530181/samples/img1_ig4qcq.png',
         },
 
         {
@@ -26,6 +27,7 @@ const ReviewApi=
             'like': '1000',
             'dislikes': 24,
             'comment': 24,
+            'image':'https://res.cloudinary.com/dbnxbly1r/image/upload/v1712530181/samples/img1_ig4qcq.png',
         },
 
         {
@@ -39,6 +41,7 @@ const ReviewApi=
             'like': '900',
             'dislikes': 24,
             'comment': 24,
+            'image':'https://res.cloudinary.com/dbnxbly1r/image/upload/v1712530181/samples/img1_ig4qcq.png',
         },
 
         {
@@ -52,6 +55,7 @@ const ReviewApi=
             'like': '214',
             'dislikes': 4,
             'comment': 24,
+            'image':'https://res.cloudinary.com/dbnxbly1r/image/upload/v1712530181/samples/img1_ig4qcq.png',
         },
     ]
 

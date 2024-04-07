@@ -48,6 +48,7 @@ const Usercard = () => {
                         <p className='text-[0.9rem]'>
                             {item.text}
                         </p>
+                        <p>{item.location}</p>
                     </div>
 
                     <div className="card-footer flex justify-between">

@@ -16,8 +16,7 @@ const ReviewCard = ({name, month, text, user, rating, location, like, dislikes, 
 
     return (
         <>
-            {/*{ReviewApi.map((item, index) => {
-                return (*/}
+            <div className=''>
 
                 <div className='flex flex-col'>
                     <div className='card-header flex justify-between'>
@@ -41,6 +40,7 @@ const ReviewCard = ({name, month, text, user, rating, location, like, dislikes, 
                         <p className='text-[0.9rem]'>
                             {text}
                         </p>
+                        <p>{location }</p>
                     </div>
 
                     <div className="flex justify-start">
@@ -92,7 +92,7 @@ const ReviewCard = ({name, month, text, user, rating, location, like, dislikes, 
                     <hr className='my-4'/>
                 </div>
 
-            {/*})})}*/}
+            </div>
         </>
     )
 }

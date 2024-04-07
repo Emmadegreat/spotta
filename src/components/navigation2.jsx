@@ -2,8 +2,8 @@ import React, {useState} from 'react'
 
 import user from '../static/images/user.png';
 
-const Navigation2 = () => {
-    const [search, setSearch] = useState("")
+const Navigation2 = ({type, value, name,placeholder, onChange }) => {
+
 
     return (
         <div className='flex justify-between items-center h-[70px] w-full md:w-full border-[1px] border-[red]'>
@@ -17,17 +17,17 @@ const Navigation2 = () => {
                 </a>
             </div>
 
-            <div className='w-[60%] md:w-[88%] md:fixed md:top-14 border-[black]'>
+            <div className='w-[60%] md:w-[90%] md:fixed md:top-14 border-[black]'>
                 <div className='relative'>
                 <span className='absolute inset-y-0 left-2 top-2 pl-3 rotate-[330deg] flex items-center text-[1.6rem] text-[#3567ff]'>
                     &#9906;
                 </span>
                 <input
-                    type='search'
-                    name='search'
-                    placeholder='Search'
-                    value={search}
-                    onChange={(e)=>setSearch(e.target.value)}
+                    type={type}
+                    name={name}
+                    placeholder={placeholder}
+                    value={value}
+                    onChange={onChange}
 
                     className='w-[90%] md:w-[100%] pl-10 h-[46px] md:h-[40px] text-sm px-4 py-2 rounded border-[1px] border-[#d8d7d7] focus:border-solid focus:border-[1px] focus:border-blue-500'
                 />

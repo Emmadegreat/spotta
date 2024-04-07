@@ -1,7 +1,8 @@
+import React, { useState } from 'react'
+
 import ButtonGroup from '../components/buttongroup';
 import Navigation2 from '../components/navigation2';
 import PasswordInput from '../components/passwordInput';
-import React from 'react'
 import ReviewApi from '../components/reviewapi';
 import ReviewCard from '../components/reviewcard';
 import ShareButton from '../components/sharebutton';
@@ -19,10 +20,24 @@ const Review1 = () => {
         'Public transport', 'Bus Station', 'Quiet'
     ]
 
+    const [search, setSearch] = useState("")
+
+    const Filter = ReviewApi.filter((item) => {
+        return item.location.toLowerCase().includes(search.toLowerCase())
+    })
+
+
     return (
         <div className='bg-[#fafcfd]'>
             <div className='fixed bg-[#f2f6fd] px-[2.5rem] md:px-[2rem] sm:px-[1rem] z-[1000] w-full'>
-                <Navigation2 />
+                <Navigation2
+                    type="search"
+                    name="search"
+                    value={search}
+                    placeholder="placeholder"
+                    onChange={(e)=>setSearch(e.target.value)}
+                />
+
                 <div className='flex justify-between items-center mt-8 w-full md:w-[100%] border-[1px] border-[#238c52] md:flex-col'>
                     <div className='flex flex-col'>
                         <h3 className='text-[#252525] font-bold md:font-semibold sm:text-[0.8rem]'>Bonny and Clyde Street, Ajao Estate, Lagos</h3>
@@ -55,35 +70,57 @@ const Review1 = () => {
                 </div>
             </div><br/>{/*================1st section end=============*/}
 
-            <section className='px-[2.5rem] py-8  bg-[#fafcfd] rounded-lg mt-[10rem] md:mt-[16rem]'>
-                <div className='flex justify-between'>
-                    <div className='basis-[53%] border-2 border-[red] pr-4'>
-                        {ReviewApi.map((item) => (
+            <section className='py-8  bg-[#fafcfd] rounded-lg mt-[10rem] md:mt-[13rem] px-[2.5rem] md:px-[2rem] sm:px-[1rem]'>
+                <div className='flex justify-between md:flex-col'>
+                    <div className='basis-[53%] border-2 border-[red] pr-4 md:pr-0 md:order-2'>
+                        {Filter.length > 0 ? (
+                            Filter.map((item) => (
 
-                            <ReviewCard key={item.id}
-                                user={item.user}
-                                name={item.name}
-                                month={item.month}
-                                rating={item.rating}
-                                like={item.like}
-                                dislikes={item.dislikes}
-                                text={item.text}
-                                comment={item.comment}
-                                location={item.location}
-                            />
+                                <ReviewCard key={item.id}
+                                    user={item.user}
+                                    name={item.name}
+                                    month={item.month}
+                                    rating={item.rating}
+                                    like={item.like}
+                                    dislikes={item.dislikes}
+                                    text={item.text}
+                                    comment={item.comment}
+                                    //location={item.location}
+                                />
 
-                        ))}
+                            ))
+                        ) : (
+
+                            <div className='flex justify-center py-6'>
+                                <div className='max-w-[360px] py-8 flex flex-col justify-center items-center'>
+
+                                    <img src={emptyreview} alt="empty review" className='w-[100%] h-[auto]' />
+                                    <p className='py-8 text-center text-[#5f5f5f] text-[1.2rem] font-medium'>Oops! No reviews yet.</p>
+                                    <a href="/review1"
+                                        className='flex justify-center w-[200px] text-sm text-center items-center mb-3 p-2 border-[1px] border-[#d8d7d7]
+                                        text-[#fff] bg-[#3366ff] rounded-lg font-semibold'
+                                    >
+                                        LEAVE A REVIEW
+                                    </a>
+
+                                </div>
+                            </div>
+
+                        )}
+
                     </div>
 
-                    <div className='border-[2px] basis-[43%] border-[blue]'>
-                        <div className='grid gap-4 grid-cols-2 '>
-                            <img src={img1} alt="" className='object-cover w-full ' />
+                    <div className='border-[2px] basis-[43%] border-[blue] md:order-1 md:mb-6'>
+                        <div className='image-container'>
+                            <img src={img1} alt="" className='object-cover w-full img1' />
 
-                            <img src={img2} alt="" className='object-cover w-full  rounded-lg' />
 
-                            <img src={img3} alt="" className='object-cover w-full ' />
+                                <img src={img2} alt="" className='object-cover w-full img2  rounded-lg' />
 
-                            <img src={img4} alt="" className='object-cover w-full ' />
+                                <img src={img3} alt="" className='object-cover w-full img3' />
+
+
+                            <img src={img4} alt="" className='object-cover w-full img4' />
                         </div>
                     </div>
                 </div>
@@ -100,19 +137,9 @@ const Review1 = () => {
                             <img src={user} alt="" className='w-[auto] h-auto' />
                         </div>
                     </div>
-                </div>
-                {/*<div className='max-w-[360px] py-8 flex flex-col justify-center items-center'>
-
-                    <img src={emptyreview} alt="empty review" className='w-[100%] h-[auto]' />
-                    <p className='py-8 text-center text-[#5f5f5f] text-[1.2rem] font-medium'>Oops! No reviews yet.</p>
-                    <a href="/review1"
-                        className='flex justify-center w-[200px] text-sm text-center items-center mb-3 p-2 border-[1px] border-[#d8d7d7]
-                         text-[#fff] bg-[#3366ff] rounded-lg font-semibold'
-                    >
-                        LEAVE A REVIEW
-                    </a>
-
                 </div>*/}
+
+
 
             </section>
 
