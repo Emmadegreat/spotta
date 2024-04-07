@@ -12,14 +12,14 @@ body {
 
 @media screen and (max-width: 768px){
   body{
-    padding: 0rem 2rem;
+    /*padding: 0rem 2rem;*/
 
   }
 }
 
 @media screen and (max-width: 425px){
   body{
-    padding: 0rem 1rem;
+    /*padding: 0rem 1rem;*/
 
   }
 }

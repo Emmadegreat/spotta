@@ -5,7 +5,7 @@ import user from '../static/images/user.png';
 
 const Navigation = () => {
     return (
-        <div className='flex justify-between items-center h-[70px] w-full border-[1px] border-[red]'>
+        <nav className='flex justify-between items-center h-[70px] w-full border-[1px] border-[red]'>
             <div className=''>
                 <a href="/"
                     className='text-decoration-none text-blue-700 font-bold text-[0.7rem]'>
@@ -21,7 +21,7 @@ const Navigation = () => {
                 <img src={user} alt="user"  className="hidden" />
             </div>
 
-        </div>
+        </nav>
     )
 }
 

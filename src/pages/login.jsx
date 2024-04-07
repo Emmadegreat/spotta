@@ -9,7 +9,7 @@ import google from '../static/images/google.png'
 const Login = () => {
 
     return (
-        <>
+        <div className='px-[2.5rem] md:px-[2rem] sm:px-[1rem] bg-[#f5f5f5]'>
             <Navigation/>
             <div className='
                 flex flex-col items-center px-6 m-auto my-8 max-w-[360px] bg-[#fafcfd] rounded-lg'
@@ -81,7 +81,7 @@ const Login = () => {
 
              </div>
 
-        </>
+        </div>
     )
 }
 
