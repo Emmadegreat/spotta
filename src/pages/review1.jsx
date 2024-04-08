@@ -123,16 +123,16 @@ const Review1 = () => {
                     <div className='border-[2px] basis-[43%] border-[blue] md:order-1 md:mb-6'>
                         <div className='image-container'>
                             <p>pleas how images</p>
-                            <img src={img1} alt="Image1" className='object-cover w-full img1' />
+                            <img src={img1} alt="Image1" className='object-cover img1' />
 
 
-                            <img src={img2} alt="Image2" className='object-cover w-full img2  rounded-lg' />
+                            <img src={img2} alt="Image2" className='object-cover img2  rounded-lg' />
 
-                            <img src={img3} alt="Image3" className='object-cover w-full img3' />
+                            <img src={img3} alt="Image3" className='object-cover img3' />
 
 
-                            <img src={img4} alt="Image4" className='object-cover w-full img4' />
-                        </div>
+
+                        </div><img src={img4} alt="Image4" className='object-cover img4' />
                     </div>
                 </div>
 
