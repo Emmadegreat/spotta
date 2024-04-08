@@ -125,9 +125,9 @@ const Review1 = () => {
                             <img src="https://res.cloudinary.com/dbnxbly1r/image/upload/v1712607405/samples/General/img1_hwn0lu.png" alt="Image1" className='img1' />
 
 
-                            <img src={img2} alt="Image2" className='img2' />
+                            <img src="https://res.cloudinary.com/dbnxbly1r/image/upload/v1712608382/samples/General/img2_dd1iax.png" alt="Image2" className='img2' />
 
-                            <img src={img3} alt="Image3" className='img3' />
+                            <img src="https://res.cloudinary.com/dbnxbly1r/image/upload/v1712608428/samples/General/img3_b4cifz.png" alt="Image3" className='img3' />
 
                             <img src="https://res.cloudinary.com/dbnxbly1r/image/upload/v1712608041/samples/General/img4_ictshl.png" alt="Image4" className='img4' />
 
