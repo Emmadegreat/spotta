@@ -122,7 +122,6 @@ const Review1 = () => {
 
                     <div className='border-[2px] basis-[43%] border-[blue] md:order-1 md:mb-6'>
                         <div className='image-container'>
-                            <p>pleas how images</p>
                             <img src={img1} alt="Image1" className='object-cover img1' />
 
 
