@@ -45,7 +45,7 @@ const Navigation2 = ({ type, value, name, placeholder, onChange }) => {
             <div>
                 <a href="/login" className='text-[#5882f2] text-sm font-bold hidden'>LOGIN</a>
                 <p className='flex px-2'>welcome!<img src="https://res.cloudinary.com/dbnxbly1r/image/upload/v1712614055/samples/General/Rectangle_32_dac8or.png" alt="user"
-                    className="ml-3 block w-[20px] h-[20px]" />
+                    className="ml-3 block w-[20px] h-[20px] rounded-2xl" />
                 </p>
             </div>
 
