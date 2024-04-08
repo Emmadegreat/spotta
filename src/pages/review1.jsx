@@ -129,7 +129,7 @@ const Review1 = () => {
 
                             <img src={img3} alt="Image3" className='img3' />
 
-                            <img src={img4} alt="Image4" className='img4' />
+                            <img src="https://res.cloudinary.com/dbnxbly1r/image/upload/v1712608041/samples/General/img4_ictshl.png" alt="Image4" className='img4' />
 
                         </div>
                     </div>
