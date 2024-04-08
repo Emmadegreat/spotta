@@ -27,12 +27,9 @@ const Review1 = () => {
         return item.location.toLowerCase().includes(search.toLowerCase())
     })
 
-    const Check = () => {
-        if (Filter) {
-            return (Filter.length, 'people are reviewing this loction');
-        } else {
-          return (Filter.length, 'Reviews');
-        }
+    const [showModal, setShowModal] = useState(false);
+    const ToggleModal = (e) => {
+        e.preventDefault(setShowModal(!showModal));
     }
 
     return (
@@ -58,12 +55,13 @@ const Review1 = () => {
                     </div>
 
                     <div className='flex justify-between items-center md:mt-2'>
-                        <a href="/review1"
+                        <button
                             className='w-[150px] text-sm text-center p-2
-                         text-[#fff] bg-[#3366ff] rounded-lg font-semibold'
+                            text-[#fff] bg-[#3366ff] rounded-lg font-semibold'
+                            onClick={ToggleModal}
                         >
                             LEAVE A REVIEW
-                        </a>
+                        </button>
                         <a href="#" className='mx-4 p-2 border-[1px] border-[#3366ff] rounded'>
                             <img src={icon1} alt="user" className="w-[20px] h-[20px]" />
                         </a>
@@ -135,12 +133,21 @@ const Review1 = () => {
                     </div>
                 </div>
 
+                {showModal && (
+                <div className='absolute flex items-center w-full z-[1000] h-[100vh] bg-[#1d3044] top-0 bottom-0 left-0 right-0'>
+                    <div
 
+                        className='fixed top-[30%] left-[40%] bottom-[30%] w-[300px] h-[300px] bg-[#fff] text-[#000] p-4 rounded'>
+                        <p>review here</p>
+                        <button onClick={ToggleModal}>X</button>
+                    </div>
+                </div>
+                )}
             </section>
 
-            <section className=''>
-                <Modal />
-            </section>
+
+
+
 
         </div>
     )
