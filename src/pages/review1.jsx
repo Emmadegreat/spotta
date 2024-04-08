@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import ButtonGroup from '../components/buttongroup';
+import Modal from '../components/modal';
 import Navigation2 from '../components/navigation2';
 import PasswordInput from '../components/passwordInput';
 import ReviewApi from '../components/reviewapi';
@@ -26,6 +27,13 @@ const Review1 = () => {
         return item.location.toLowerCase().includes(search.toLowerCase())
     })
 
+    const Check = () => {
+        if (Filter) {
+            return (Filter.length, 'people are reviewing this loction');
+        } else {
+          return (Filter.length, 'Reviews');
+        }
+    }
 
     return (
         <div className='bg-[#fafcfd]'>
@@ -34,16 +42,18 @@ const Review1 = () => {
                     type="search"
                     name="search"
                     value={search}
+
                     placeholder="placeholder"
                     onChange={(e)=>setSearch(e.target.value)}
                 />
 
                 <div className='flex justify-between items-center mt-8 w-full md:w-[100%] border-[1px] border-[#238c52] md:flex-col'>
                     <div className='flex flex-col'>
-                        <h3 className='text-[#252525] font-bold md:font-semibold sm:text-[0.8rem]'>Bonny and Clyde Street, Ajao Estate, Lagos</h3>
-                        <p className='text-[#121111] font-semibold text-[0.8rem] sm:text-[0.5rem]
+                        <h3 className='text-[#252525] font-bold md:font-semibold sm:text-[0.8rem]'>{ search }</h3>
+                        <p className='text-[#121111] font-semibold text-[0.9rem] sm:text-[0.5rem]
                         '>
-                            <b className='text-[#504f4f]'>“450” Reviews</b>  (People are raving about the selected location)
+                           {Filter.length > 0 ? `"${Filter.length}" Reviews (People are reviewing about the selected location)` :
+                                Filter.length === 0 ? "0 Reviews" : ""}
                         </p>
                     </div>
 
@@ -141,6 +151,10 @@ const Review1 = () => {
 
 
 
+            </section>
+
+            <section className=''>
+                <Modal />
             </section>
 
         </div>
