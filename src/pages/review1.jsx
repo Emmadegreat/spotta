@@ -134,11 +134,16 @@ const Review1 = () => {
                 </div>
 
                 {showModal && (
-                <div className='absolute flex items-center w-full z-[1000] h-[100vh] bg-[#1d3044] top-0 bottom-0 left-0 right-0'>
+                <div className='absolute opacity-[0.9] flex items-center w-full z-[1000] h-[100vh] bg-[#1D3045] top-0 bottom-0 left-0 right-0'>
                     <div
+                        className='fixed  top-[20%] left-[30%] bottom-[20%] w-[500px] h-[400px] bg-[#fff] text-[#000] p-4 rounded-2xl'>
+                            <h4 className='text-center font-semibold text-[#1E1E1E]'>Review Location</h4>
+                            <p className='text-[start] pt-2 font-medium'>Bonny and Clyde Street, Ajao Estate, Lagos</p>
 
-                        className='fixed top-[30%] left-[40%] bottom-[30%] w-[300px] h-[300px] bg-[#fff] text-[#000] p-4 rounded'>
-                        <p>review here</p>
+                            <div className='flex justify-between my-4 p-2 bg-[] items-center'>
+                                <span>Select Amenties</span>
+                                <span>&f078;</span>
+                            </div>
                         <button onClick={ToggleModal}>X</button>
                     </div>
                 </div>
