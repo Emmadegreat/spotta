@@ -133,7 +133,7 @@ const Review1 = () => {
 
 
                         </div>
-                    </div><img src={img4} alt="Image4" className='object-cover img4' />
+                    </div>
                 </div>
 
 
