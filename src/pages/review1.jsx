@@ -126,7 +126,7 @@ const Review1 = () => {
                             <img src={img1} alt="Image1" className='object-cover img1' />
 
 
-                            <img src={img2} alt="Image2" className='object-cover img2  rounded-lg' />
+
 
                             <img src={img3} alt="Image3" className='object-cover img3' />
 
