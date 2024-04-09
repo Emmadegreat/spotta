@@ -144,8 +144,8 @@ const Review1 = () => {
                 </div>
 
                 {showModal && (
-                    <div className='fixed opacity-[0.99] flex items-center w-full z-[2000] h-[100vh] bg-[#213449] top-0 bottom-0 left-0 right-0'>
-                        <div className='fixed  top-[10px left-[30%] bottom-[10%] w-[40%] bg-[#fff] text-[#000] p-4 rounded-2xl' >
+                    <div className='fixed opacity-[0.99] flex items-center w-full z-[2000] h-[100%] bg-[#213449] top-0 bottom-0 left-0 right-0'>
+                        <div className='z-[1500] fixed top-[10%] left-[30%] bottom-[10%] w-[40%] bg-[#fff] text-[#000] p-4 rounded-2xl modal-content' >
                             <h4 className='text-center font-semibold text-[#1E1E1E]'>Review Location</h4>
                             <p className='text-[start] pt-2 font-medium'>{ search }</p>
 
@@ -163,7 +163,7 @@ const Review1 = () => {
                                 {showAmenities && (
                                     <div className='bg-[#f3f7fe] rounded boder-1 border-blue-400 show-amenities'>
                                         {AmenitiesList.map((item) => (
-                                            <div key={item.id} className='text-[0.7rem] flex items-center'>
+                                            <div key={item.id} className='text-[0.7rem] md:text-[0.6rem] flex items-center'>
 
                                                 <label>
                                                     <input type="checkbox"
@@ -179,8 +179,8 @@ const Review1 = () => {
                                 )}
 
                                 <div className='flex flex-col flex-start'>
-                                    <p className='py-1 text-[#1E1E1E]  font-medium'>Rate Location</p>
-                                    <p className='text-[1.4rem] text-[#fabb07] cursor-pointer opacity-[0.5]'>
+                                    <p className='py-1 text-[#1E1E1E]  md:text-sm font-medium'>Rate Location</p>
+                                    <p className='text-[1.4rem] md:text-[1.1rem] text-[#fabb07] cursor-pointer opacity-[0.5]'>
                                         &#9733; &#9733; &#9733; &#9733; &#9733;
                                     </p>
                                 </div>
@@ -191,7 +191,7 @@ const Review1 = () => {
                                         required
                                         placeholder='Write Review'
                                         name="review" id="" cols="" rows=""
-                                        className='bg-[#fbfafc] h-[120px] w-full rounded p-2'>
+                                        className='bg-[#fbfafc] h-[100px] w-full rounded p-2'>
 
                                     </textarea>
                                     <div className='my-2'>
@@ -199,7 +199,7 @@ const Review1 = () => {
                                         <span className='ml-2 text-[#484851]'>Post as Anonymous</span>
                                     </div>
 
-                                    <div className='flex items-center justify-between py-3'>
+                                    <div className='flex items-center justify-between py-2 md:py-1'>
                                         <button
                                             type='submit'
                                             className='w-[48%] text-sm text-center p-2

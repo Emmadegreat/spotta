@@ -62,6 +62,21 @@ height: 100%;}
   padding: 0.5rem;
 }
 
+@media screen and (max-width:920px) {
+  .show-amenities{
+    grid-template-columns: repeat(1,1fr);
+  }
+
+  .modal-content{
+    position: fixed;
+    top: 10px;
+    left: 10%;
+    right: 10%;
+    bottom: 10px;
+    width: 80%;
+  }
+}
+
 @media screen and (max-width: 768px){
   .image-container{
     display: grid;
