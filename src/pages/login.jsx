@@ -21,12 +21,12 @@ const Login = () => {
                         <input
                             type="email"
                             name='email'
-
+                            required
                             placeholder='E-mail'
                             className='w-full h-[42px] bg-[#f3f7fe] text-[1rem] px-3 py-1 mb-5 rounded-lg border-[1px] border-[#9aabdf] focus:border-solid focus:border-[1px] focus:border-blue-500'
                         />
                         <div className='w-full'>
-                            <PasswordInput />
+                            <PasswordInput placeholder="placeholder" />
                         </div>
 
                         <button type='submit'
