@@ -22,6 +22,12 @@ const Review1 = () => {
         'Train Station', 'Night Life', 'Public Wifi', 'Parking Lot', 'Security',
         'Public transport', 'Bus Station', 'Quiet'
     ]
+    const AmenitiesList = [{ 'name': 'Parking Lot' }, { 'name': 'Free Wifi' },
+        { 'name': 'Nightlife' }, { 'name': 'Petstore' }, { 'name': 'Hospitals' },
+        { 'name': 'Childcare' }, { 'name': 'Adult Home' }, { 'name': 'Gym' },
+        { 'name': 'Schools' }, { 'name': 'Security' },
+
+    ]
 
     const [search, setSearch] = useState("")
 
@@ -138,12 +144,12 @@ const Review1 = () => {
                 </div>
 
                 {showModal && (
-                    <div className='absolute opacity-[0.99] flex items-center w-full z-[1000] h-[100vh] bg-[#213449] top-0 bottom-0 left-0 right-0'>
-                        <div className='fixed  top-[40px left-[30%] bottom-[40px] w-[40%] bg-[#fff] text-[#000] p-4 rounded-2xl' >
+                    <div className='fixed opacity-[0.99] flex items-center w-full z-[2000] h-[100vh] bg-[#213449] top-0 bottom-0 left-0 right-0'>
+                        <div className='fixed  top-[10px left-[30%] bottom-[10%] w-[40%] bg-[#fff] text-[#000] p-4 rounded-2xl' >
                             <h4 className='text-center font-semibold text-[#1E1E1E]'>Review Location</h4>
                             <p className='text-[start] pt-2 font-medium'>{ search }</p>
 
-                            <div className='flex justify-between my-4 p-2 bg-[#f3f7fe] items-center rounded'>
+                            <div className='flex justify-between p-2 bg-[#f3f7fe] items-center rounded'>
                                 <span className='text-[#1E1E1E] text-sm'>Select Amenties</span>
                                 <span>
                                     <img src='https://res.cloudinary.com/dbnxbly1r/image/upload/v1702851638/hyggex/Frame_1_zdsoot.png'
@@ -152,20 +158,33 @@ const Review1 = () => {
                                     />
                                 </span>
                             </div>
+                            <form onSubmit="">
 
-                            {showAmenities && (
-                                <div>
-                                    show amenities
+                                {showAmenities && (
+                                    <div className='bg-[#f3f7fe] rounded boder-1 border-blue-400 show-amenities'>
+                                        {AmenitiesList.map((item) => (
+                                            <div key={item.id} className='text-[0.7rem] flex items-center'>
+
+                                                <label>
+                                                    <input type="checkbox"
+                                                        className='mr-1'
+                                                        name="checkbox" id="" />
+                                                    {item.name}
+                                                </label>
+
+
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
+
+                                <div className='flex flex-col flex-start'>
+                                    <p className='py-1 text-[#1E1E1E]  font-medium'>Rate Location</p>
+                                    <p className='text-[1.4rem] text-[#fabb07] cursor-pointer opacity-[0.5]'>
+                                        &#9733; &#9733; &#9733; &#9733; &#9733;
+                                    </p>
                                 </div>
-                            )}
 
-                            <div className='flex flex-col flex-start'>
-                                <p className='py-1 text-[#1E1E1E]  font-medium'>Rate Location</p>
-                                <p className='text-[1.4rem] text-[#fabb07] cursor-pointer opacity-[0.5]'>
-                                    &#9733; &#9733; &#9733; &#9733; &#9733;
-                                </p>
-                            </div>
-                            <form >
                                 <div className='py-3'>
                                     <p className='py-2 text-[#1E1E1E] text-sm'>Write Review</p>
                                     <textarea
@@ -183,14 +202,14 @@ const Review1 = () => {
                                     <div className='flex items-center justify-between py-3'>
                                         <button
                                             type='submit'
-                                            className='w-[225px] text-sm text-center p-2
+                                            className='w-[48%] text-sm text-center p-2
                                             text-[#fff] bg-[#3366ff] rounded font-semibold'
                                         >
                                         SUBMIT
                                         </button>
                                         <button
                                             onClick={ToggleModal}
-                                            className='w-[225px] text-sm text-center p-2
+                                            className='w-[48%] text-sm text-center p-2
                                         bg-[#fff] text-[#3366ff] rounded border-[0.05rem] border-[#3366ff] font-semibold'
                                         >CANCEL
                                         </button>
