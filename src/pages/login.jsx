@@ -1,12 +1,36 @@
-import Eyeicon from '../components/eyeicon';
+import {useNavigate} from 'react-router-dom'
 import Navigation from '../components/navigation';
 import PasswordInput from '../components/passwordInput';
-import React from 'react'
+import React,{useState} from 'react'
 import apple from '../static/images/apple.png'
 import facebook from '../static/images/facebook.png'
 import google from '../static/images/google.png'
 
 const Login = () => {
+
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const [message, setMessage] = useState("")
+    const navigate = useNavigate()
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+
+        if (!email || !password) {
+            setMessage("Please enter your email and password");
+            return;
+        }
+
+        const getRegisteredUsers = JSON.parse(localStorage.getItem("users") || []);
+
+        const user = getRegisteredUsers.find((user) => user.email === email);
+
+        if (user && user.password === password) {
+            navigate('/review1');
+        } else {
+            setMessage('Invalid email or password');
+        }
+    }
 
     return (
         <div className='px-[2.5rem] md:px-[2rem] sm:px-[1rem] bg-[#f5f5f5]'>
@@ -16,17 +40,22 @@ const Login = () => {
             >
                 <h4 className='text-black font-semibold pt-5 pb-1'>Log In</h4>
 
-                <form className='my-4 w-full'>
+                <form className='my-4 w-full' onSubmit={handleLogin}>
+                    <div className='py-3 text-red-500'>{message && <p>{ message }</p>}</div>
                     <div className='flex flex-col items-start'>
                         <input
                             type="email"
                             name='email'
-                            required
+                            value={email}
+                            onChange={(e)=>setEmail(e.target.value)}
                             placeholder='E-mail'
                             className='w-full h-[42px] bg-[#f3f7fe] text-[1rem] px-3 py-1 mb-5 rounded-lg border-[1px] border-[#9aabdf] focus:border-solid focus:border-[1px] focus:border-blue-500'
                         />
                         <div className='w-full'>
-                            <PasswordInput placeholder="placeholder" />
+                            <PasswordInput
+                                placeholder="placeholder"
+                                onChange={ (e) =>setPassword(e.target.value)}
+                            />
                         </div>
 
                         <button type='submit'

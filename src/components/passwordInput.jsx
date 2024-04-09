@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import Eyeicon from './eyeicon';
 
-const PasswordInput = ({placeholder}) => {
+const PasswordInput = ({placeholder , value, onChange }) => {
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
     const togglePasswordVisibility = () => {
@@ -27,7 +27,8 @@ const PasswordInput = ({placeholder}) => {
                     placeholder={placeholder}
                     name="password"
                     id='passwordInput'
-                    required
+                    value={value}
+                    onChange={onChange}
                 />
             </div>
         </>

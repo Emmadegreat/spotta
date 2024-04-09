@@ -1,11 +1,55 @@
 import Navigation from '../components/navigation';
 import RegPassword from '../components/regpassword';
-import React from 'react'
+import React, {useState} from 'react'
 import apple from '../static/images/apple.png'
 import facebook from '../static/images/facebook.png'
 import google from '../static/images/google.png'
+import {useNavigate} from 'react-router-dom'
 
 const Register = () => {
+
+    const [firstname, setFirstname] = useState("")
+    const [lastname, setLastname] = useState("")
+    const [username, setUsername] = useState("")
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const [confirmpassword, setConfirmpassword] = useState("")
+    const [message, setMessage] = useState("")
+
+    const navigate = useNavigate()
+
+    const HandleSubmit = (e) => {
+        e.preventDefault()
+
+        if (!firstname || !lastname || !username || !email || !password || !confirmpassword) {
+            setMessage("Please fill in all the fileds")
+            return;
+        }
+
+        const users = { firstname, lastname, username, email, password, confirmpassword };
+
+        const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
+
+        const existingUser = existingUsers.find((u)=>u.email === email)
+        if (existingUser) {
+            setMessage('User with this email already exists');
+            return;
+        }
+
+        existingUsers.push(users);
+
+        localStorage.setItem('users', JSON.stringify(existingUsers));
+        console.log(users);
+
+        setFirstname('');
+        setLastname('');
+        setUsername('');
+        setEmail('');
+        setPassword('');
+        setConfirmpassword('');
+        alert('Successfully registered');
+        navigate('/login');
+    }
 
     return (
         <div className='px-[2.5rem] md:px-[2rem] sm:px-[1rem] bg-[#f5f5f5]'>
@@ -15,24 +59,25 @@ const Register = () => {
             >
                 <h4 className='text-black font-semibold pt-5 pb-1'>Sign Up</h4>
 
-                <form className='my-4 w-full'>
+                <form className='my-4 w-full' onSubmit={HandleSubmit}>
+                    <div className='py-3'>{message && <p>{ message }</p>}</div>
                     <div className='flex flex-col items-start'>
                         <div className='flex justify-between items-center'>
                             <input
                                 type="text"
                                 name='firstname'
-
+                                value={firstname}
                                 placeholder='First Name'
-                                required
+                                onChange={(e)=>setFirstname(e.target.value)}
                                 className='w-full h-[42px] bg-[#f3f7fe] text-[1rem] px-3 py-1 mb-5 rounded-lg border-[1px] border-[#9aabdf]
                                 focus:border-solid focus:border-[1px] focus:border-blue-500 mr-2'
                             />
                             <input
                                 type="text"
                                 name='lastname'
-
+                                value={lastname}
                                 placeholder='Last Name'
-                                required
+                                onChange={(e)=>setLastname(e.target.value)}
                                 className='w-full h-[42px] bg-[#f3f7fe] text-[1rem] px-3 py-1 mb-5 rounded-lg border-[1px]
                                  border-[#9aabdf] focus:border-solid focus:border-[1px] focus:border-blue-500 ml-2'
                             />
@@ -40,25 +85,33 @@ const Register = () => {
                         <input
                             type="text"
                             name='username'
-
+                            value={username}
                             placeholder='Username'
-                            required
+                            onChange={(e)=>setUsername(e.target.value)}
                             className='w-full h-[42px] bg-[#f3f7fe] text-[1rem] px-3 py-1 mb-5 rounded-lg border-[1px] border-[#9aabdf] focus:border-solid focus:border-[1px] focus:border-blue-500'
                         />
                         <input
                             type="email"
                             name='email'
-
+                            value={email}
                             placeholder='E-mail address'
-                            required
+                            onChange={(e)=>setEmail(e.target.value)}
                             className='w-full h-[42px] bg-[#f3f7fe] text-[1rem] px-3 py-1 mb-5 rounded-lg border-[1px] border-[#9aabdf] focus:border-solid focus:border-[1px] focus:border-blue-500'
                         />
                         <div className='w-full'>
-                            <RegPassword placeholder="Password" />
+                            <RegPassword
+                                placeholder="Password"
+                                value={password}
+                                onChange={(e) =>setPassword(e.target.value)}
+                            />
                         </div>
 
                         <div className='w-full'>
-                            <RegPassword placeholder="Confirm Password" />
+                            <RegPassword
+                                placeholder="Confirm Password"
+                                value={confirmpassword}
+                                onChange={(e) =>setConfirmpassword(e.target.value)}
+                            />
                         </div>
 
                         <button type='submit'

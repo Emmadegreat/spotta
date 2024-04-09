@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import lockpassword from '../static/images/lockpassword.png';
 
-const RegPassword = ({placeholder}) => {
+const RegPassword = ({placeholder, value, onChange }) => {
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
     const togglePasswordVisibility = () => {
@@ -26,7 +26,8 @@ const RegPassword = ({placeholder}) => {
                     placeholder={placeholder}
                     name="ConfirmPassword"
                     id='ConfirmPassword'
-                    required
+                    value={value}
+                    onChange={onChange}
                 />
             </div>
         </>
