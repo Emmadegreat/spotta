@@ -9,7 +9,7 @@ import emptyreview from '../static/images/empty-review.png'
 import icon1 from '../static/images/icon1.png'
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import {useNavigate} from 'react-router-dom'
+
 
 const Review1 = () => {
 
@@ -47,14 +47,13 @@ const Review1 = () => {
     }
 
     const [message, setMessage] = useState("");
-    const navigate = useNavigate();
 
     const handleReview = (e) => {
         e.preventDefault();
 
-        if (message !== "") {
+        if(message !== "") {
             setShowModal(!showModal)
-            toast.success('Review submitted');
+            toast.success('Review submitted', );
         }
     }
 
