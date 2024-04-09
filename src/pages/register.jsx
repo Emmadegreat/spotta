@@ -26,6 +26,11 @@ const Register = () => {
             return;
         }
 
+        if (confirmpassword !== password) {
+            setMessage("Password does not match")
+            return;
+        }
+
         const users = { firstname, lastname, username, email, password, confirmpassword };
 
         const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
@@ -60,7 +65,7 @@ const Register = () => {
                 <h4 className='text-black font-semibold pt-5 pb-1'>Sign Up</h4>
 
                 <form className='my-4 w-full' onSubmit={HandleSubmit}>
-                    <div className='py-3'>{message && <p>{ message }</p>}</div>
+                    <div className='py-3 text-red-500'>{message && <p>{ message }</p>}</div>
                     <div className='flex flex-col items-start'>
                         <div className='flex justify-between items-center'>
                             <input

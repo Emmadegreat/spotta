@@ -60,7 +60,7 @@ const Review1 = () => {
                     <div className='flex justify-between items-center md:mt-2'>
                         <button
                             className='w-[150px] text-sm text-center p-2
-                            text-[#fff] bg-[#3366ff] rounded-lg font-semibold'
+                            text-[#fff] bg-[#3366ff] rounded-lg font-semibold md:text-[0.7rem]'
                             onClick={ToggleModal}
                         >
                             LEAVE A REVIEW
@@ -188,7 +188,7 @@ const Review1 = () => {
                                     </textarea>
                                     <div className='my-2'>
                                         <input type="checkbox" name="checkbox" id="" required />
-                                        <span className='ml-2 text-[#484851]'>Post as Anonymous</span>
+                                        <span className='ml-2 text-[#484851] md:text-[0.6rem]'>Post as Anonymous</span>
                                     </div>
 
                                     <div className='flex items-center justify-between py-2 md:py-1'>

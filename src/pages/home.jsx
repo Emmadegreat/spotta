@@ -7,7 +7,7 @@ import Usercard from '../components/usercard';
 const Home = () => {
     return (
         <div className='px-[2.5rem] md:px-[2rem] sm:px-[1rem] bg-[#fafcfd]'>
-            <Navigation /><br /><br />
+            <Navigation /><br />
 
             <div className='home'>
                 <div className='part1'>
