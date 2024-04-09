@@ -191,7 +191,7 @@ const Review1 = () => {
                                         required
                                         placeholder='Write Review'
                                         name="review" id="" cols="" rows=""
-                                        className='bg-[#fbfafc] h-[100px] w-full rounded p-2'>
+                                        className='bg-[#fbfafc] h-[100px] md:h-[100px] w-full rounded p-2'>
 
                                     </textarea>
                                     <div className='my-2'>
