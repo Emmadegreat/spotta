@@ -53,9 +53,8 @@ const Review1 = () => {
 
         if(message !== "") {
             setShowModal(!showModal)
-            toast.success('Review submitted', {
-            position: toast.POSITION.TOP_CENTER,
-        });
+            toast.success('Review submitted'
+           );
         }
     }
 
