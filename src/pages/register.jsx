@@ -27,7 +27,7 @@ const Register = () => {
         }
 
         if (confirmpassword !== password) {
-            setMessage("Password does not match")
+            setMessage("Password do not match, please re-enter")
             return;
         }
 
