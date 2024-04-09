@@ -35,6 +35,15 @@ const Review1 = () => {
     const [showAmenities, setshowAmenities] = useState(false);
     const ToggleShowAmenities = () => setshowAmenities(!showAmenities);
 
+    const [submitOverlay, setSubmitOverlay] = useState(true);
+    const [checkboxes, setCheckboxes] = useState(false);
+
+    const ShowSubmitBtn = () => {
+        setSubmitOverlay(false);
+        setCheckboxes(true);
+    }
+
+
     return (
         <div className='bg-[#fafcfd]'>
             <div className='fixed bg-[#f2f6fd] px-[2.5rem] md:px-[2rem] sm:px-[1rem] z-[1000] w-full'>
@@ -160,7 +169,9 @@ const Review1 = () => {
                                                 <label>
                                                     <input type="checkbox"
                                                         className='mr-1'
-                                                        name="checkbox" id="" />
+                                                        name="checkbox" id=""
+                                                        onClick={ShowSubmitBtn}
+                                                    />
                                                     {item.name}
                                                 </label>
 
@@ -192,21 +203,30 @@ const Review1 = () => {
                                     </div>
 
                                     <div className='flex items-center justify-between py-2 md:py-1'>
-                                        <button
 
+                                        <button
+                                            disabled={!checkboxes}
                                             type='submit'
-                                            className='w-[48%] text-sm text-center p-2
+                                            className='w-[47%] text-sm text-center p-2 ml-2
                                             text-[#fff] bg-[#3366ff] rounded font-semibold'
                                         >
-                                        SUBMIT
+                                            SUBMIT
                                         </button>
                                         <button
                                             onClick={ToggleModal}
-                                            className='w-[48%] text-sm text-center p-2
+                                            className='w-[47%] text-sm text-center p-2
                                         bg-[#fff] text-[#3366ff] rounded border-[0.05rem] border-[#3366ff] font-semibold'
                                         >CANCEL
                                         </button>
                                     </div>
+
+                                    { submitOverlay && (
+
+                                        <div
+                                        className='relative top-[-50px] bg-[#E4E9FB] w-[50%] p-2 rounded h-[50px]'>
+
+                                        </div>
+                                    )}
                                 </div>
                             </form>
 
