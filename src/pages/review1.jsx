@@ -7,6 +7,9 @@ import ReviewCard from '../components/reviewcard';
 import ShareButton from '../components/sharebutton';
 import emptyreview from '../static/images/empty-review.png'
 import icon1 from '../static/images/icon1.png'
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import {useNavigate} from 'react-router-dom'
 
 const Review1 = () => {
 
@@ -42,6 +45,19 @@ const Review1 = () => {
         setSubmitOverlay(false);
         setCheckboxes(true);
     }
+
+    const [message, setMessage] = useState("");
+    const navigate = useNavigate();
+
+    const handleReview = (e) => {
+        e.preventDefault();
+
+        if (message !== "") {
+            setShowModal(!showModal)
+            toast.success('Review submitted');
+        }
+    }
+
 
 
     return (
@@ -159,7 +175,7 @@ const Review1 = () => {
                                     />
                                 </span>
                             </div>
-                            <form onSubmit="">
+                            <form onSubmit={handleReview}>
 
                                 {showAmenities && (
                                     <div className='bg-[#f3f7fe] rounded boder-1 border-blue-400 show-amenities'>
@@ -191,9 +207,11 @@ const Review1 = () => {
                                 <div className='py-3'>
                                     <p className='py-2 text-[#1E1E1E] text-sm'>Write Review</p>
                                     <textarea
-                                        required
+                                        //required
                                         placeholder='Write Review'
                                         name="review" id="" cols="" rows=""
+                                        value={message}
+                                        onChange={(e) => setMessage(e.target.value)}
                                         className='bg-[#fbfafc] h-[100px] md:h-[100px] w-full rounded p-2'>
 
                                     </textarea>
