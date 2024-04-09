@@ -1,11 +1,9 @@
-//import '../static/css/navigation.css';
-
 import React from 'react'
 import user from '../static/images/user.png';
 
 const Navigation = () => {
     return (
-        <nav className='flex justify-between items-center h-[70px] w-full border-[1px] border-[red]'>
+        <nav className='flex justify-between items-center h-[70px] w-full z-[1000]'>
             <div className=''>
                 <a href="/"
                     className='text-decoration-none text-blue-700 font-bold text-[0.7rem]'>
@@ -17,7 +15,7 @@ const Navigation = () => {
                 </a>
             </div>
             <div>
-                <a href="/login" className='text-[#5882f2] text-sm font-bold'>LOGIN</a>
+                <a href="/login" className='text-[#5882f2] text-sm font-semibold'>LOGIN</a>
                 <img src={user} alt="user"  className="hidden" />
             </div>
 

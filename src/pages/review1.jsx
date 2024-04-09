@@ -1,20 +1,12 @@
 import React, { useState } from 'react'
 
 import ButtonGroup from '../components/buttongroup';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Modal from '../components/modal';
 import Navigation2 from '../components/navigation2';
-import PasswordInput from '../components/passwordInput';
 import ReviewApi from '../components/reviewapi';
 import ReviewCard from '../components/reviewcard';
 import ShareButton from '../components/sharebutton';
 import emptyreview from '../static/images/empty-review.png'
-import {faChevronUp} from '@fortawesome/free-solid-svg-icons';
 import icon1 from '../static/images/icon1.png'
-import img1 from '../static/images/img1.png'
-import img2 from '../static/images/img2.png'
-import img3 from '../static/images/img3.png'
-import img4 from '../static/images/img4.png'
 
 const Review1 = () => {
 
@@ -55,7 +47,7 @@ const Review1 = () => {
                     onChange={(e)=>setSearch(e.target.value)}
                 />
 
-                <div className='flex justify-between items-center mt-8 w-full md:w-[100%] border-[1px] border-[#238c52] md:flex-col'>
+                <div className='flex justify-between items-center mt-8 w-full md:w-[100%] md:flex-col'>
                     <div className='flex flex-col'>
                         <h3 className='text-[#252525] font-bold md:font-semibold sm:text-[0.8rem]'>{ search }</h3>
                         <p className='text-[#121111] font-semibold text-[0.9rem] sm:text-[0.5rem]
@@ -73,10 +65,10 @@ const Review1 = () => {
                         >
                             LEAVE A REVIEW
                         </button>
-                        <a href="#" className='mx-4 p-2 border-[1px] border-[#3366ff] rounded'>
+                        <a href="/" className='mx-4 p-2 border-[1px] border-[#3366ff] rounded'>
                             <img src={icon1} alt="user" className="w-[20px] h-[20px]" />
                         </a>
-                        <a href="#" className='p-2 border-[1px] border-[#3366ff] rounded'>
+                        <a href="/" className='p-2 border-[1px] border-[#3366ff] rounded'>
                             <ShareButton/>
                         </a>
 
@@ -91,7 +83,7 @@ const Review1 = () => {
 
             <section className='py-8  bg-[#fafcfd] rounded-lg mt-[10rem] md:mt-[13rem] px-[2.5rem] md:px-[2rem] sm:px-[1rem]'>
                 <div className='flex justify-between md:flex-col'>
-                    <div className='basis-[53%] border-2 border-[red] pr-4 md:pr-0 md:order-2'>
+                    <div className='basis-[53%] pr-4 md:pr-0 md:order-2'>
                         {Filter.length > 0 ? (
                             Filter.map((item) => (
 
@@ -128,7 +120,7 @@ const Review1 = () => {
 
                     </div>
 
-                    <div className='border-[2px] basis-[43%] border-[blue] md:order-1 md:mb-6'>
+                    <div className='basis-[43%] md:order-1 md:mb-6'>
                         <div className='image-container'>
                             <img src="https://res.cloudinary.com/dbnxbly1r/image/upload/v1712607405/samples/General/img1_hwn0lu.png" alt="Image1" className='img1' />
 
@@ -201,6 +193,7 @@ const Review1 = () => {
 
                                     <div className='flex items-center justify-between py-2 md:py-1'>
                                         <button
+
                                             type='submit'
                                             className='w-[48%] text-sm text-center p-2
                                             text-[#fff] bg-[#3366ff] rounded font-semibold'

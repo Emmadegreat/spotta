@@ -1,7 +1,5 @@
 import React, {useState} from 'react'
 
-import user from '../static/images/user.png';
-
 const Navigation2 = ({ type, value, name, placeholder, onChange }) => {
 
     const [inputValue, setInputValue] = useState(value)
@@ -13,7 +11,7 @@ const Navigation2 = ({ type, value, name, placeholder, onChange }) => {
 
 
     return (
-        <div className='flex justify-between items-center h-[70px] w-full md:w-full border-[1px] border-[red]'>
+        <div className='flex justify-between items-center h-[70px] w-full md:w-full'>
             <div className=''>
                 <a href="/"
                     className='text-decoration-none text-blue-700 font-bold text-[0.7rem]

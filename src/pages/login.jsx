@@ -75,7 +75,7 @@ const Login = () => {
                     <p
                         className='my-2 text-underline text-sm font-semibold text-[#727577]'
                     >Don't have an account &nbsp;
-                        <a href="/" className='text-[#3366ff]'>Sign Up?</a>
+                        <a href="/register" className='text-[#3366ff]'>Sign Up?</a>
                     </p>
                 </div>
 

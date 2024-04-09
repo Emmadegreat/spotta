@@ -4,13 +4,15 @@ import Home from "./pages/home";
 import Login from "./pages/login";
 import Navigation2 from "./components/navigation2";
 import React from "react";
+import Register from "./pages/register";
 import Review1 from "./pages/review1";
 
 const router = createBrowserRouter([
-    { path: '/', element: <Home /> },
-    { path: '/login', element: <Login /> },
-    { path: '/review1', element: <Review1 /> },
-    {path: '/navigation2', element:<Navigation2 />},
+  { path: '/', element: <Home /> },
+  { path: '/login', element: <Login /> },
+  { path: '/review1', element: <Review1 /> },
+  { path: '/navigation2', element: <Navigation2 /> },
+  {path: '/register', element: <Register /> },
 ])
 
 export default router
