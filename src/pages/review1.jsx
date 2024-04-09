@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import ButtonGroup from '../components/buttongroup';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Modal from '../components/modal';
 import Navigation2 from '../components/navigation2';
 import PasswordInput from '../components/passwordInput';
@@ -8,6 +9,7 @@ import ReviewApi from '../components/reviewapi';
 import ReviewCard from '../components/reviewcard';
 import ShareButton from '../components/sharebutton';
 import emptyreview from '../static/images/empty-review.png'
+import {faChevronUp} from '@fortawesome/free-solid-svg-icons';
 import icon1 from '../static/images/icon1.png'
 import img1 from '../static/images/img1.png'
 import img2 from '../static/images/img2.png'
@@ -31,6 +33,9 @@ const Review1 = () => {
     const ToggleModal = (e) => {
         e.preventDefault(setShowModal(!showModal));
     }
+
+    const [showAmenities, setshowAmenities] = useState(false);
+    const ToggleShowAmenities = () => setshowAmenities(!showAmenities);
 
     return (
         <div className='bg-[#fafcfd]'>
@@ -93,7 +98,6 @@ const Review1 = () => {
                                     dislikes={item.dislikes}
                                     text={item.text}
                                     comment={item.comment}
-                                    //location={item.location}
                                 />
 
                             ))
@@ -134,19 +138,68 @@ const Review1 = () => {
                 </div>
 
                 {showModal && (
-                <div className='absolute opacity-[0.9] flex items-center w-full z-[1000] h-[100vh] bg-[#1D3045] top-0 bottom-0 left-0 right-0'>
-                    <div
-                        className='fixed  top-[20%] left-[30%] bottom-[20%] w-[500px] h-[400px] bg-[#fff] text-[#000] p-4 rounded-2xl'>
+                    <div className='absolute opacity-[0.99] flex items-center w-full z-[1000] h-[100vh] bg-[#213449] top-0 bottom-0 left-0 right-0'>
+                        <div className='fixed  top-[40px left-[30%] bottom-[40px] w-[40%] bg-[#fff] text-[#000] p-4 rounded-2xl' >
                             <h4 className='text-center font-semibold text-[#1E1E1E]'>Review Location</h4>
-                            <p className='text-[start] pt-2 font-medium'>Bonny and Clyde Street, Ajao Estate, Lagos</p>
+                            <p className='text-[start] pt-2 font-medium'>{ search }</p>
 
-                            <div className='flex justify-between my-4 p-2 bg-[] items-center'>
-                                <span>Select Amenties</span>
-                                <span>&f078;</span>
+                            <div className='flex justify-between my-4 p-2 bg-[#f3f7fe] items-center rounded'>
+                                <span className='text-[#1E1E1E] text-sm'>Select Amenties</span>
+                                <span>
+                                    <img src='https://res.cloudinary.com/dbnxbly1r/image/upload/v1702851638/hyggex/Frame_1_zdsoot.png'
+                                        className='text-[1.8rem] text-[#28262C] cursor-pointer' alt="toggle show amenities icon"
+                                        onClick={ToggleShowAmenities}
+                                    />
+                                </span>
                             </div>
-                        <button onClick={ToggleModal}>X</button>
+
+                            {showAmenities && (
+                                <div>
+                                    show amenities
+                                </div>
+                            )}
+
+                            <div className='flex flex-col flex-start'>
+                                <p className='py-1 text-[#1E1E1E]  font-medium'>Rate Location</p>
+                                <p className='text-[1.4rem] text-[#fabb07] cursor-pointer opacity-[0.5]'>
+                                    &#9733; &#9733; &#9733; &#9733; &#9733;
+                                </p>
+                            </div>
+                            <form >
+                                <div className='py-3'>
+                                    <p className='py-2 text-[#1E1E1E] text-sm'>Write Review</p>
+                                    <textarea
+                                        required
+                                        placeholder='Write Review'
+                                        name="review" id="" cols="" rows=""
+                                        className='bg-[#fbfafc] h-[120px] w-full rounded p-2'>
+
+                                    </textarea>
+                                    <div className='my-2'>
+                                        <input type="checkbox" name="checkbox" id="" required />
+                                        <span className='ml-2 text-[#484851]'>Post as Anonymous</span>
+                                    </div>
+
+                                    <div className='flex items-center justify-between py-3'>
+                                        <button
+                                            type='submit'
+                                            className='w-[225px] text-sm text-center p-2
+                                            text-[#fff] bg-[#3366ff] rounded font-semibold'
+                                        >
+                                        SUBMIT
+                                        </button>
+                                        <button
+                                            onClick={ToggleModal}
+                                            className='w-[225px] text-sm text-center p-2
+                                        bg-[#fff] text-[#3366ff] rounded border-[0.05rem] border-[#3366ff] font-semibold'
+                                        >CANCEL
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
                     </div>
-                </div>
                 )}
             </section>
 
