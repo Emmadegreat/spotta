@@ -53,8 +53,9 @@ const Login = () => {
                         />
                         <div className='w-full'>
                             <PasswordInput
-                                placeholder="placeholder"
-                                onChange={ (e) =>setPassword(e.target.value)}
+                                placeholder="Password"
+                                onChange={(e) => setPassword(e.target.value)}
+                                value={password}
                             />
                         </div>
 
